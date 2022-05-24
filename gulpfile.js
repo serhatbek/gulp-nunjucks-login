@@ -5,7 +5,6 @@ const sass = require('gulp-sass')(require('sass'));
 const minifySCSS = require('gulp-clean-css');
 const minifyJs = require('gulp-uglify');
 const notify = require('gulp-notify');
-const data = require('gulp-data');
 const nunjucksRender = require('gulp-nunjucks-render');
 
 function copyImages() {
