@@ -1,0 +1,14 @@
+.container {
+  max-width: 1210px;
+  padding: 0 20px;
+  width: 100%;
+  margin: 0 auto;
+
+  @media screen and (max-width: 460px) {
+    padding: 0 10px;
+  }
+}
+
+.overflowHidden {
+  overflow: hidden;
+}
