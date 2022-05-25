@@ -1,1 +1,1 @@
-$("#form-email").parsley();
+$("#form-email").parsley().on("field:success",function(){$(".form__action .button.button--disabled").removeClass("button--disabled")}),$("#form-email").parsley().on("form:error",function(){$(".form__action .button.button--disabled").addClass("button--disabled")});
