@@ -54,4 +54,18 @@
       display: block;
     }
   }
+
+  .input-errors-line {
+    position: absolute;
+    left: 15px;
+    bottom: 0;
+    width: 40px;
+    height: 1px;
+    background-color: $alert-light;
+    display: none;
+  }
+
+  input.parsley-error ~ .input-errors-line {
+    display: block;
+  }
 }
