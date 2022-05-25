@@ -1,0 +1,46 @@
+.input {
+  position: relative;
+  width: 100%;
+
+  &::after {
+    content: '';
+    width: 290px;
+    height: 1px;
+    background-color: $neutral300;
+    display: block;
+    margin: 0 auto;
+  }
+
+  input {
+    width: 100%;
+    height: 55px;
+    border: none;
+    background-image: linear-gradient(to bottom, $neutral000, $neutral100);
+    padding-left: 15px;
+    font-size: 15px;
+    color: $neutral800;
+    font-weight: 600;
+    line-height: 1.53;
+  }
+
+  label {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    color: $neutral600;
+    transition: all 0.3s ease-in-out;
+  }
+
+  > input:focus + label {
+    font-size: 10px;
+    top: 6px;
+  }
+}
+
+#input-errors {
+  .parsley-errors-list .filled {
+    .parsley-required {
+      color: $alert-light !important;
+    }
+  }
+}

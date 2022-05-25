@@ -1,5 +1,6 @@
 {% extends 'includes/layout/layout.njk' %}
 {% import 'includes/components/Button/button.njk' as Button %}
+{% import 'includes/components/Input/input.njk' as Input %}
 {% set title = 'Login' %}
 
 {% block content %}
@@ -8,9 +9,25 @@
       <figure>
         <img src="/assets/images/logo.png" alt="Logo">
       </figure>
-      <form class="login-email__form">
+      <form id="form-email" class="login-email__form">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
+        <div class="form__row">
+          {{Input.item(
+            required=true,
+            type='email',
+            id='login-email',
+            labelFor='login-email',
+            label='Eposta Adresi'
+          )}}
+        </div>
+
+        <div class="form__action">
+          {{Button.item(
+            text='Devam Et',
+            buttonDisabled=true
+          )}}
+        </div>
       </form>
     </div>
   </section>
@@ -20,8 +37,4 @@
 {# {{Button.item(
     text='Devam Et'
   )}}
-
-      {{Button.item(
-    text='Devam Et',
-    buttonv2=true
-  )}} #}
+#}

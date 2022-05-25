@@ -1,0 +1,21 @@
+{% macro item(class, required, label, type, icon, id, attr, labelFor) %}
+  <div {% if id %} id="{{ id }}" {%- endif -%}
+      class="input
+        {%- if class -%} {{ class }} {%- endif -%}
+        {%- if icon -%} input--icon {%- endif -%}">
+    <input type="{% if type -%} {{ type }}{% else %}text{%- endif -%}"
+        {%- if required -%}required {% endif -%}
+        {%- if attr -%} {{ attr }}{%- endif -%}
+        data-parsley-errors-container="#input-errors"
+        data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+        data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
+  >
+    <label for="{{ labelFor }}">{{label}}</label>
+    {%- if icon -%}
+      <button type="button" class="input__class">
+        {{icon}}
+      </button>
+    {%- endif -%}
+  </div>
+  <div id="input-errors"></div>
+{% endmacro %}

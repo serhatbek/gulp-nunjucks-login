@@ -18,9 +18,28 @@
       <figure>
         <img src="/assets/images/logo.png" alt="Logo">
       </figure>
-      <form class="login-email__form">
+      <form id="form-email" class="login-email__form">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
+        <div class="form__row">
+          
+  <div  id="login-email"class="input">
+    <input type="email"required data-parsley-errors-container="#input-errors"
+        data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+        data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
+  >
+    <label for="login-email">Eposta Adresi</label></div>
+  <div id="input-errors"></div>
+
+        </div>
+
+        <div class="form__action">
+          
+  
+    <button class="button button--disabled">Devam Et</button>
+  
+
+        </div>
       </form>
     </div>
   </section>
