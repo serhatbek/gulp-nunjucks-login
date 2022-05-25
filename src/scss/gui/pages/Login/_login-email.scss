@@ -15,7 +15,8 @@
     }
 
     #{ $self }__form {
-      width: 420px;
+      max-width: 420px;
+      width: 100%;
       padding: 45px 50px;
       border: 1px solid $neutral200;
 
