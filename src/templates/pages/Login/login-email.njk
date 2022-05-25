@@ -1,0 +1,27 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+{% set title = 'Login' %}
+
+{% block content %}
+  <section class="login-email">
+    <div class="container">
+      <figure>
+        <img src="/assets/images/logo.png" alt="Logo">
+      </figure>
+      <form class="login-email__form">
+        <h1>Giriş</h1>
+        <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
+      </form>
+    </div>
+  </section>
+
+{% endblock %}
+
+{# {{Button.item(
+    text='Devam Et'
+  )}}
+
+      {{Button.item(
+    text='Devam Et',
+    buttonv2=true
+  )}} #}

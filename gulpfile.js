@@ -8,7 +8,7 @@ const notify = require('gulp-notify');
 const nunjucksRender = require('gulp-nunjucks-render');
 
 function copyImages() {
-  return src('src/images/*.{webp,jpeg, png}').pipe(dest('dist/assets/images'));
+  return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
 }
 
 function customPlumber(errorTitle) {
