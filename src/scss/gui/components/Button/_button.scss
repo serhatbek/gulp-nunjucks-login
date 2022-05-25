@@ -15,3 +15,7 @@
     background-color: $neutral100;
   }
 }
+
+.login-email .parsley-success ~ .form__action .button {
+  @extend .button--disabled;
+}

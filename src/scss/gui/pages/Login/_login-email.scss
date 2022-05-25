@@ -37,6 +37,10 @@
       .form__row {
         margin-bottom: 45px;
 
+        .parsley-error {
+          color: $alert-light !important;
+        }
+
         #input-errors {
           .parsley-errors-list.filled {
             .parsley-required,
