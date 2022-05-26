@@ -16,14 +16,20 @@ $('#form-email')
 // **********************
 
 const input = document.querySelector('input');
-console.log(input.value);
+const formSub = document.querySelector('.button');
 
-input.addEventListener('input', changeDataFilled);
+if (input) {
+  input.addEventListener('input', changeDataFilled);
+}
 
 function changeDataFilled() {
   if (input.value === '') {
     input.dataset.filled = 'false';
+    formSub.disabled = true;
+    formSub.classList.add('button--disabled');
   } else {
     input.dataset.filled = 'true';
+    formSub.disabled = false;
+    formSub.classList.remove('button--disabled');
   }
 }
