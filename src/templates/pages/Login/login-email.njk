@@ -4,12 +4,12 @@
 {% set title = 'Login Email' %}
 
 {% block content %}
-  <section class="login-email">
+  <section class="section-login">
     <div class="container">
       <figure>
         <img src="/assets/images/logo.png" alt="Logo">
       </figure>
-      <form id="form-email" class="login-email__form">
+      <form id="form-email" class="form">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
         <div class="form__row">
@@ -19,7 +19,8 @@
             id='login__email',
             labelFor='login__email',
             label='Eposta Adresi',
-            icon='/assets/images/icon-input-alert.png'
+            icon='/assets/images/icon-input-alert.png',
+            parsleyEmail=true
           )}}
         </div>
 

@@ -1,1 +1,16 @@
-@import './login-email';
+.section-login {
+  padding-top: 100px;
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    figure {
+      max-width: 89px;
+      height: 25px;
+      margin-bottom: 15px;
+    }
+  }
+}
