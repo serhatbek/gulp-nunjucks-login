@@ -1,12 +1,13 @@
-{% macro item(class, required, label, type, icon, id, attr, labelFor) %}
+{% macro item(class, required, label, type, icon, id, dataParsley, labelFor) %}
   <div {% if id %} id="{{ id }}" {%- endif -%}
       class="input
-        {%- if class -%} {{ class }} {%- endif -%}
-        {%- if icon %} input--icon {%- endif -%}">
-    <input type="{% if type -%} {{ type }}{% else %}text{%- endif -%}"
-        {%- if required -%}required {% endif -%}
-        {%- if attr -%} {{ attr }}{%- endif -%}
-        data-parsley-errors-container="#input-errors"
+          {%- if class -%} {{ class }} {%- endif -%}
+          {%- if icon %} input--icon {%- endif -%}">
+    <input type="{%- if type -%} {{ type }}{% else %}text{%- endif -%}"
+          {%- if required -%} required {% endif -%}
+          {%- if dataParsley -%} {{ dataParsley }}{%- endif -%}
+          data-filled
+          data-parsley-errors-container="#input-errors"
         data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
         data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
         data-parsley-trigger="submit"
@@ -21,3 +22,17 @@
   </div>
   <div id="input-errors"></div>
 {% endmacro %}
+
+{# {%- if parsleyEmail -%}
+        data-parsley-errors-container="#input-errors"
+        data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+        data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
+        data-parsley-trigger="submit"
+        {%- endif -%} #}
+
+{# data-parsley-errors-container="#input-errors"
+        data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+        data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
+        data-parsley-trigger="submit" #}
+
+{# dataParsley='data-parsley-errors-container="#input-errors" data-parsley-required-message="Lütfen e-posta adresinizi giriniz." data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"' #}

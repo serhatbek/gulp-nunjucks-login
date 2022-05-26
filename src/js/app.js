@@ -12,3 +12,18 @@ $('#form-email')
     $('.form__action .button.button--disabled').addClass('button--disabled');
   });
 // dsfdsgfg@gmail.com
+
+// **********************
+
+const input = document.querySelector('input');
+console.log(input.value);
+
+input.addEventListener('input', changeDataFilled);
+
+function changeDataFilled() {
+  if (input.value === '') {
+    input.dataset.filled = 'false';
+  } else {
+    input.dataset.filled = 'true';
+  }
+}

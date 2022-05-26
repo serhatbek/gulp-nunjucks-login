@@ -28,10 +28,12 @@
     left: 15px;
     top: 15px;
     color: $neutral600;
+    pointer-events: none;
     transition: all 0.3s ease-in-out;
   }
 
-  > input:focus + label {
+  > input:focus ~ label,
+  > input[data-filled='true'] ~ label {
     font-size: 10px;
     top: 6px;
   }
