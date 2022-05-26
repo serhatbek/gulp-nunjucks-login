@@ -15,7 +15,7 @@ $('#form-email')
 
 // **********************
 
-const input = document.querySelector('.form__row input');
+const input = document.querySelector('.input input');
 const formSub = document.querySelector('.form__action .button');
 
 if (input) {
@@ -31,5 +31,26 @@ function changeDataFilled() {
     input.dataset.filled = 'true';
     formSub.disabled = false;
     formSub.classList.remove('button--disabled');
+  }
+}
+
+// ***************************
+const togglePassword = document.querySelector('.input__icon');
+const passIcon = document.querySelector('.input__icon img');
+const password = document.querySelector('#login__password input');
+
+console.log(password);
+
+if (togglePassword) {
+  togglePassword.addEventListener('click', showHidePassword);
+}
+
+function showHidePassword() {
+  if (password.type === 'password') {
+    passIcon.src = '/assets/images/pass-hidden.png';
+    password.type = 'text';
+  } else {
+    passIcon.src = '/assets/images/pass-visible.png';
+    password.type = 'password';
   }
 }

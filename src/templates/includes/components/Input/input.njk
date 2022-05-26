@@ -1,4 +1,4 @@
-{% macro item(class, required, label, type, icon, id, parsleyEmail, parsleyPassword, labelFor) %}
+{% macro item(class, required, label, type, icon, id, parsleyEmail, parsleyPassword, inputAlert, labelFor) %}
   <div {% if id %} id="{{ id }}" {%- endif -%}
       class="input
           {%- if class -%} {{ class }} {%- endif -%}
@@ -11,11 +11,18 @@
           data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
           data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
         {%- endif -%}
+        {% if parsleyPassword -%}
+          data-parsley-errors-container="#input-errors"
+          data-parsley-pattern=""
+          data-parsley-required-message="Lütfen şifrenizi giriniz."
+          data-parsley-pattern-message="En az 6 karakter, en az 1 harf, 1 rakam ve 1 özel karakter girmelisiniz."
+        {%- endif -%}
   >
     <label for="{{ labelFor }}">{{label}}</label>
     {%- if icon -%}
-      <button type="button" class="input__icon"
-      >
+      <button type="button" class="input__icon
+      {%- if inputAlert %} input--alert{%- endif -%}
+      ">
         <img src="{{icon}}">
       </button>
     {%- endif -%}

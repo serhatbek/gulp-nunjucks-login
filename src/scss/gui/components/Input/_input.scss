@@ -38,12 +38,16 @@
     top: 6px;
   }
 
-  input.parsley-error ~ .input__icon {
+  input.parsley-error ~ .input--alert {
     display: block;
   }
 
-  .input__icon {
+  .input--alert {
     display: none;
+  }
+
+  .input__icon,
+  .input--alert {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -54,7 +58,12 @@
 
     img {
       display: block;
+      pointer-events: none;
     }
+  }
+
+  .input__icon {
+    cursor: pointer;
   }
 
   .input-errors-line {
