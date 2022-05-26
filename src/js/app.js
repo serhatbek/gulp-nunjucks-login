@@ -15,8 +15,8 @@ $('#form-email')
 
 // **********************
 
-const input = document.querySelector('input');
-const formSub = document.querySelector('.button');
+const input = document.querySelector('.form__row input');
+const formSub = document.querySelector('.form__action .button');
 
 if (input) {
   input.addEventListener('input', changeDataFilled);
