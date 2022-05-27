@@ -1,0 +1,39 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+{% import 'includes/components/Input/input.njk' as Input %}
+{% set title = 'Login Captcha Email' %}
+
+{% block content %}
+  <section class="section-login">
+    <div class="container">
+      <figure>
+        <img src="/assets/images/lifebox-logo.png" alt="Logo">
+      </figure>
+      <form id="form-email" class="form">
+        <h1>Giriş</h1>
+        <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
+        <div class="form__row">
+          {{Input.item(
+            required=true,
+            type='email',
+            id='login__email',
+            labelFor='login__email',
+            label='Eposta Adresi',
+            inputAlert=true,
+            icon='/assets/images/input-alert.png',
+            parsleyEmail=true
+          )}}
+        </div>
+
+        {% include 'includes/components/Captcha/captcha.njk' %}
+
+        <div class="form__action">
+          {{Button.item(
+            text='Devam Et',
+            buttonDisabled=true
+          )}}
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}

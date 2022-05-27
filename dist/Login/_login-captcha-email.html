@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Login Password
+        Login Captcha Email
       </title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -20,30 +20,17 @@
       </figure>
       <form id="form-email" class="form">
         <h1>Giriş</h1>
-        <p class="user-email">gokce.cetin@turkcell.com.tr</p>
+        <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
         <span>için giriş yapın</span>
         <div class="form__row">
           
-
-  <div class="input input--icon">
-    <input type="Password"
-           id="login__password"required data-filled
-          autocomplete="off"
-
+  <div  id="login__email"class="input input--icon">
+    <input type="email"required data-filled
           data-parsley-errors-container="#input-errors"
-          data-parsley-minlength="8"
-          data-parsley-uppercase="1"
-          data-parsley-lowercase="1"
-          data-parsley-number="1"
-          data-parsley-special="1"
-          data-parsley-required-message="Lütfen şifrenizi giriniz."
-          data-parsley-special-message="Şifreniz en az 1 özel karakter içermeli."
-          data-parsley-number-message="Şifreniz en az 1 rakam içermeli."
-          data-parsley-uppercase-message="Şifreniz en az 1 büyük harf içermeli."
-          data-parsley-lowercase-message="Şifreniz en az 1 küçük harf içermeli."
-          data-parsley-minlength-message="Şifreniz en az 8 haneli olmalı.">
-    <label for="login__password">Şifre</label><button type="button" class="input__icon">
-        <img src="/assets/images/pass-visible.png">
+          data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+          data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı">
+    <label for="login__email">Eposta Adresi</label><button type="button" class="input__icon input--alert">
+        <img src="/assets/images/input-alert.png">
       </button><div class="input-line"></div>
     <div class="input-errors-line"></div>
   </div>
@@ -52,10 +39,9 @@
         </div>
 
         <div class="form__action">
-          <a href="javascript:;">Şifremi Unuttum</a>
           
   
-    <button class="button button--disabled">Giriş Yap</button>
+    <button class="button button--disabled">Devam Et</button>
   
 
         </div>

@@ -1,0 +1,23 @@
+{% import 'includes/components/Input/input.njk' as Input %}
+
+<div class="captcha">
+  <div class="captcha__img">
+    <figure>
+      <img src="" alt="">
+    </figure>
+    <figure>
+      <img src="/assets/images/refresh.png">
+    </figure>
+    <figure>
+      <img src="/assets/images/listen.png">
+    </figure>
+  </div>
+  <div class="captcha__input">
+    {{Input.item(
+      required=true,
+      id='login-captcha',
+      labelFor='login-captcha',
+      label='Resimdeki kodu giriniz'
+    )}}
+  </div>
+</div>
