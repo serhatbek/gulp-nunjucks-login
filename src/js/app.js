@@ -73,9 +73,9 @@ function changeDataFilled() {
 // ***************************
 const togglePassword = document.querySelector('.input__icon');
 const passIcon = document.querySelector('.input__icon img');
-const password = document.querySelector('#login__password input');
+const password = document.querySelector('#login__password');
 
-console.log(password);
+console.log(password, togglePassword);
 
 if (togglePassword) {
   togglePassword.addEventListener('click', showHidePassword);

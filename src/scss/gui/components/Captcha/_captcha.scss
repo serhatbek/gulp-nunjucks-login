@@ -7,6 +7,14 @@
     display: flex;
     margin-bottom: 25px;
     justify-content: space-between;
+    align-items: center;
+
+    > figure:first-child {
+      width: 150px;
+      height: 72px;
+      border: 1px solid $neutral200;
+      padding: 0 15px;
+    }
 
     > figure:not(:first-child) {
       width: 45px;
@@ -21,11 +29,17 @@
         height: 24px;
       }
     }
+
+    .vertical-line {
+      width: 1px;
+      height: 25px;
+      background-color: $neutral200;
+    }
   }
 
   &__input {
     .input::after {
-      width: 250px;
+      max-width: 250px;
       height: 0.5px;
     }
   }
