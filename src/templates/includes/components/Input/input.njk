@@ -1,4 +1,4 @@
-{% macro item(class, required, label, type, icon, id, parsleyEmail, parsleyPassword, inputAlert, labelFor) %}
+{% macro item(class, required, label, type, icon, id, parsleyEmail, parsleyPassword, inputAlert, parsleyCaptcha, labelFor) %}
 
   <div class="input
           {%- if class -%} {{ class }} {%- endif -%}
@@ -7,16 +7,15 @@
           {% if id %} id="{{ id }}" {%- endif -%}
           {%- if required -%} required {% endif -%}
           autocomplete="off"
-          data-filled
-
-          {% if parsleyEmail -%}
+          data-filled="false"
           data-parsley-errors-container="#input-errors"
+
+        {% if parsleyEmail -%}
           data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
           data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
         {%- endif -%}
 
         {% if parsleyPassword -%}
-          data-parsley-errors-container="#input-errors"
           data-parsley-minlength="8"
           data-parsley-uppercase="1"
           data-parsley-lowercase="1"
@@ -29,12 +28,17 @@
           data-parsley-lowercase-message="Şifreniz en az 1 küçük harf içermeli."
           data-parsley-minlength-message="Şifreniz en az 8 haneli olmalı."
         {%- endif -%}
+
+        {% if parsleyCaptcha -%}
+          data-parsley-minlength="6"
+          data-parsley-minlength-message="En az 6 haneli olmalı"
+          data-parsley-required-message="Kodu doğru girdiğinizden emin olun."
+        {% endif %}
   >
     <label for="{{ labelFor }}">{{label}}</label>
     {%- if icon -%}
       <button type="button" class="input__icon
-      {%- if inputAlert %} input--alert{%- endif -%}
-      ">
+      {%- if inputAlert %} input--alert{%- endif -%}">
         <img src="{{icon}}">
       </button>
     {%- endif -%}

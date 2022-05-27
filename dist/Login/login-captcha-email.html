@@ -18,7 +18,7 @@
       <figure>
         <img src="/assets/images/lifebox-logo.png" alt="Logo">
       </figure>
-      <form id="form-email" class="form">
+      <form id="login-form" class="form">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
         <div class="form__row">
@@ -27,11 +27,12 @@
   <div class="input input--icon">
     <input type="email"
            id="login__email"required autocomplete="off"
-          data-filled
-
+          data-filled="false"
           data-parsley-errors-container="#input-errors"
-          data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
-          data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı">
+
+        data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
+          data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
+  >
     <label for="login__email">Eposta Adresi</label><button type="button" class="input__icon input--alert">
         <img src="/assets/images/input-alert.png">
       </button><div class="input-line"></div>
@@ -63,9 +64,14 @@
   <div class="input">
     <input type="text"
            id="login-captcha"required autocomplete="off"
-          data-filled
+          data-filled="false"
+          data-parsley-errors-container="#input-errors"
 
-          >
+        data-parsley-minlength="6"
+          data-parsley-minlength-message="En az 6 haneli olmalı"
+          data-parsley-required-message="Kodu doğru girdiğinizden emin olun."
+        
+  >
     <label for="login-captcha">Resimdeki kodu giriniz</label><div class="input-line"></div>
     <div class="input-errors-line"></div>
   </div>
@@ -77,7 +83,7 @@
         <div class="form__action">
           
   
-    <button class="button button--disabled">Devam Et</button>
+    <button class="button button--disabled"disabled>Devam Et</button>
   
 
         </div>

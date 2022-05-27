@@ -1,12 +1,12 @@
 // import * as $ from '../../node_modules/jquery/dist/jquery.min';
 // import parsley from '../../node_modules/parsley/dist/parsley';
 // *******************************
-$('#form-email')
+$('#login-form')
   .parsley()
   .on('field:success', function () {
     $('.form__action .button.button--disabled').removeClass('button--disabled');
   });
-$('#form-email')
+$('#login-form')
   .parsley()
   .on('form:error', function () {
     $('.form__action .button.button--disabled').addClass('button--disabled');
@@ -54,11 +54,14 @@ window.Parsley.addValidator('special', {
 const input = document.querySelector('.input input');
 const formSub = document.querySelector('.form__action .button');
 
+console.log(input);
+console.log(formSub);
+
 if (input) {
-  input.addEventListener('input', changeDataFilled);
+  input.addEventListener('input', toggleDataFilled);
 }
 
-function changeDataFilled() {
+function toggleDataFilled() {
   if (input.value === '') {
     input.dataset.filled = 'false';
     formSub.disabled = true;
@@ -99,6 +102,5 @@ const captchaContainer = document.querySelector('.captcha'),
 if (captchaContainer) {
   captchaRefreshBtn.addEventListener('click', () => {
     captchaImage.src = 'https://source.unsplash.com/random/150×72/';
-    console.log(captchaImage);
   });
 }
