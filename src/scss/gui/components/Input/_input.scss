@@ -66,6 +66,11 @@
     cursor: pointer;
   }
 
+  > input[data-filled='true'] ~ .input-errors-line,
+  > input:focus ~ .input-errors-line {
+    background-color: $primary500;
+  }
+
   .input-errors-line {
     position: absolute;
     left: 15px;

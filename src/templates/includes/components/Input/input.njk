@@ -13,9 +13,17 @@
         {%- endif -%}
         {% if parsleyPassword -%}
           data-parsley-errors-container="#input-errors"
-          data-parsley-pattern=""
+          data-parsley-minlength="8"
+          data-parsley-uppercase="1"
+          data-parsley-lowercase="1"
+          data-parsley-number="1"
+          data-parsley-special="1"
           data-parsley-required-message="Lütfen şifrenizi giriniz."
-          data-parsley-pattern-message="En az 6 karakter, en az 1 harf, 1 rakam ve 1 özel karakter girmelisiniz."
+          data-parsley-special-message="Şifreniz en az 1 özel karakter içermeli."
+          data-parsley-number-message="Şifreniz en az 1 rakam içermeli."
+          data-parsley-uppercase-message="Şifreniz en az 1 büyük harf içermeli."
+          data-parsley-lowercase-message="Şifreniz en az 1 küçük harf içermeli."
+          data-parsley-minlength-message="Şifreniz en az 8 haneli olmalı."
         {%- endif -%}
   >
     <label for="{{ labelFor }}">{{label}}</label>

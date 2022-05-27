@@ -47,7 +47,12 @@
         .parsley-required,
         .parsley-type,
         .parsley-pattern,
-        .parsley-range {
+        .parsley-range,
+        .parsley-special,
+        .parsley-number,
+        .parsley-uppercase,
+        .parsley-minlength,
+        .parsley-lowercase {
           color: $alert-light;
           font-size: 10px;
           line-height: 1.5;
