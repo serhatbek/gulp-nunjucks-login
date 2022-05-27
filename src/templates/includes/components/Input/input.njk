@@ -6,8 +6,8 @@
     <input type="{%- if type -%} {{ type }}{% else %}text{%- endif -%}"
           {% if id %} id="{{ id }}" {%- endif -%}
           {%- if required -%} required {% endif -%}
-          data-filled
           autocomplete="off"
+          data-filled
 
           {% if parsleyEmail -%}
           data-parsley-errors-container="#input-errors"

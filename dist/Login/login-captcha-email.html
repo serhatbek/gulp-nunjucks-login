@@ -26,8 +26,8 @@
 
   <div class="input input--icon">
     <input type="email"
-           id="login__email"required data-filled
-          autocomplete="off"
+           id="login__email"required autocomplete="off"
+          data-filled
 
           data-parsley-errors-container="#input-errors"
           data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
@@ -46,13 +46,14 @@
 <div class="captcha">
   <div class="captcha__img">
     <figure>
-      <img src="" alt="">
+      <img src="/assets/images/captcha.png">
+      
     </figure>
-    <figure>
+    <figure id="captcha__refresh">
       <img src="/assets/images/refresh.png">
     </figure>
     <div class="vertical-line"></div>
-    <figure>
+    <figure id="captcha__listen">
       <img src="/assets/images/listen.png">
     </figure>
   </div>
@@ -61,8 +62,8 @@
 
   <div class="input">
     <input type="text"
-           id="login-captcha"required data-filled
-          autocomplete="off"
+           id="login-captcha"required autocomplete="off"
+          data-filled
 
           >
     <label for="login-captcha">Resimdeki kodu giriniz</label><div class="input-line"></div>

@@ -75,8 +75,6 @@ const togglePassword = document.querySelector('.input__icon');
 const passIcon = document.querySelector('.input__icon img');
 const password = document.querySelector('#login__password');
 
-console.log(password, togglePassword);
-
 if (togglePassword) {
   togglePassword.addEventListener('click', showHidePassword);
 }
@@ -89,4 +87,18 @@ function showHidePassword() {
     passIcon.src = '/assets/images/pass-visible.png';
     password.type = 'password';
   }
+}
+
+// **************************
+
+const captchaContainer = document.querySelector('.captcha'),
+  captchaRefreshBtn = captchaContainer.querySelector('#captcha__refresh'),
+  captchaListenBtn = captchaContainer.querySelector('#captcha__listen'),
+  captchaImage = captchaContainer.querySelector('.captcha__img figure img');
+
+if (captchaContainer) {
+  captchaRefreshBtn.addEventListener('click', () => {
+    captchaImage.src = 'https://source.unsplash.com/random/150×72/';
+    console.log(captchaImage);
+  });
 }
