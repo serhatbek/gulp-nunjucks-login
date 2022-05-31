@@ -21,7 +21,7 @@
             label='Eposta Adresi',
             inputAlert=true,
             icon='/assets/images/input-alert.png',
-            parsleyEmail=true
+            atrr='data-parsley-errors-container="#input-errors" data-parsley-required-message="Lütfen e-posta adresinizi giriniz." data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"'
           )}}
         </div>
 
@@ -38,8 +38,3 @@
   </section>
 
 {% endblock %}
-
-{# {{Button.item(
-    text='Devam Et'
-  )}}
-#}

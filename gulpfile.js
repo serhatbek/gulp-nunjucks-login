@@ -5,7 +5,7 @@ const sass = require('gulp-sass')(require('sass'));
 const minifySCSS = require('gulp-clean-css');
 const minifyJs = require('gulp-uglify');
 const notify = require('gulp-notify');
-const nunjucksRender = require('gulp-nunjucks-render');
+const nunjucksRender = require('gulp-nunjucks');
 
 function copyImages() {
   return src('src/images/*.{webp,jpeg,png}').pipe(dest('dist/assets/images'));
@@ -38,7 +38,7 @@ function minJs() {
 
 function njkRender() {
   return src('src/templates/pages/**/*.+(html|njk)')
-    .pipe(nunjucksRender({ path: ['src/templates'], watch: true }))
+    .pipe(nunjucksRender.compile({ path: ['src/templates'], watch: true }))
     .pipe(dest('dist'));
 }
 

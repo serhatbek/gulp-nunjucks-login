@@ -18,6 +18,7 @@
     border: none;
     background-image: linear-gradient(to bottom, $neutral000, $neutral100);
     padding-left: 15px;
+    padding-top: 20px;
     font-size: 15px;
     color: $neutral800;
     font-weight: 600;
@@ -28,7 +29,7 @@
     position: absolute;
     left: 15px;
     top: 15px;
-    color: $neutral600;
+    color: $neutral400;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
   }

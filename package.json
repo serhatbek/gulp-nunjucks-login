@@ -2,9 +2,13 @@
   "name": "gulp-nunjucks-login",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serhatbek/gulp-nunjucks-login.git"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +18,7 @@
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
     "gulp-notify": "^4.0.0",
-    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-nunjucks": "^5.1.0",
     "gulp-plumber": "^1.2.1",
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
@@ -23,5 +27,9 @@
   "dependencies": {
     "jquery": "^3.6.0",
     "parsleyjs": "^2.9.2"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/serhatbek/gulp-nunjucks-login/issues"
+  },
+  "homepage": "https://github.com/serhatbek/gulp-nunjucks-login#readme"
 }

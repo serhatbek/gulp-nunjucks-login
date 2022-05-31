@@ -1,6 +1,7 @@
 // import * as $ from '../../node_modules/jquery/dist/jquery.min';
 // import parsley from '../../node_modules/parsley/dist/parsley';
 // *******************************
+$('#login-form').parsley();
 $('#login-form')
   .parsley()
   .on('field:success', function () {
@@ -9,7 +10,7 @@ $('#login-form')
 $('#login-form')
   .parsley()
   .on('form:error', function () {
-    $('.form__action .button.button--disabled').addClass('button--disabled');
+    $('.form__action .button').addClass('button--disabled');
   });
 // dsfdsgfg@gmail.com
 
