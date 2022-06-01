@@ -18,7 +18,7 @@
     border: none;
     background-image: linear-gradient(to bottom, $neutral000, $neutral100);
     padding-left: 15px;
-    padding-top: 20px;
+    padding-top: 15px;
     font-size: 15px;
     color: $neutral800;
     font-weight: 600;
@@ -68,13 +68,15 @@
     cursor: pointer;
   }
 
-  > input[data-filled='true'] ~ .input-line,
-  > input:focus ~ .input-line {
-    background-color: $primary500;
+  > input[data-filled='true'] ~ .input-line {
+    background-color: $neutral700;
     display: block;
   }
 
-  .input-errors-line,
+  > input:focus ~ .input-line {
+    background-color: $primary500;
+  }
+
   .input-line {
     position: absolute;
     left: 15px;
@@ -84,11 +86,7 @@
     display: none;
   }
 
-  .input-errors-line {
+  > input.parsley-error ~ .input-line {
     background-color: $alert-light;
-  }
-
-  input.parsley-error ~ .input-errors-line {
-    display: block;
   }
 }

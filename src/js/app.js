@@ -2,17 +2,6 @@
 // import parsley from '../../node_modules/parsley/dist/parsley';
 // *******************************
 $('#login-form').parsley();
-$('#login-form')
-  .parsley()
-  .on('field:success', function () {
-    $('.form__action .button.button--disabled').removeClass('button--disabled');
-  });
-$('#login-form')
-  .parsley()
-  .on('form:error', function () {
-    $('.form__action .button').addClass('button--disabled');
-  });
-// dsfdsgfg@gmail.com
 
 //has uppercase
 window.Parsley.addValidator('uppercase', {
@@ -52,26 +41,26 @@ window.Parsley.addValidator('special', {
 
 // **********************
 
-const input = document.querySelector('.input input');
 const formSub = document.querySelector('.form__action .button');
+const inputs = Array.from(document.querySelectorAll('.input input'));
+console.log(inputs);
 
-console.log(input);
-console.log(formSub);
-
-if (input) {
-  input.addEventListener('input', toggleDataFilled);
+if (inputs) {
+  inputs.forEach((input) => {
+    input.addEventListener('input', toggleDataFilled);
+  });
 }
 
 function toggleDataFilled() {
-  if (input.value === '') {
-    input.dataset.filled = 'false';
-    formSub.disabled = true;
-    formSub.classList.add('button--disabled');
-  } else {
-    input.dataset.filled = 'true';
-    formSub.disabled = false;
-    formSub.classList.remove('button--disabled');
-  }
+  inputs.forEach((input) => {
+    if (input.value === '') {
+      input.dataset.filled = 'false';
+      formSub.disabled = true;
+    } else {
+      input.dataset.filled = 'true';
+      formSub.disabled = false;
+    }
+  });
 }
 
 // ***************************

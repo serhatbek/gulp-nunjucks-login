@@ -27,11 +27,11 @@
   <div class="input input--icon">
     <input type="email"
            id="login__email"required autocomplete="off"
-          data-filled>
+          data-filled
+          data-parsley-errors-container=#input-errors data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı>
     <label for="login__email">Eposta Adresi</label><button type="button" class="input__icon input--alert">
         <img src="/assets/images/input-alert.png">
       </button><div class="input-line"></div>
-    <div class="input-errors-line"></div>
   </div>
   <div id="input-errors"></div>
 
@@ -59,9 +59,9 @@
   <div class="input">
     <input type="text"
            id="login__captcha"required autocomplete="off"
-          data-filled>
+          data-filled
+          data-parsley-errors-container=#input-errors data-parsley-minlength=6 data-parsley-minlength-message=Enaz6haneliolmalı data-parsley-required-message=Kodudoğrugirdiğinizdeneminolun.>
     <label for="login__captcha">Resimdeki kodu giriniz</label><div class="input-line"></div>
-    <div class="input-errors-line"></div>
   </div>
   <div id="input-errors"></div>
 
@@ -71,7 +71,8 @@
         <div class="form__action">
           
   
-    <button class="button button--disabled"disabled>Devam Et</button>
+    <button class="button"
+    type="submit"disabled>Devam Et</button>
   
 
         </div>

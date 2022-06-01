@@ -8,7 +8,7 @@
           {%- if required -%} required {% endif -%}
           autocomplete="off"
           data-filled
-          {%- if attr -%} {{ attr }}{%- endif -%}
+          {% if attr -%}{{attr}}{%- endif -%}
   >
     <label for="{{ labelFor }}">{{label}}</label>
     {%- if icon -%}
@@ -18,33 +18,6 @@
       </button>
     {%- endif -%}
     <div class="input-line"></div>
-    <div class="input-errors-line"></div>
   </div>
   <div id="input-errors"></div>
 {% endmacro %}
-
-{# data-parsley-errors-container="#input-errors"
-{% if parsleyEmail -%}
-          data-parsley-required-message="Lütfen e-posta adresinizi giriniz."
-          data-parsley-type-message="Girmiş olduğunuz e-posta adresi ile ilişkili bir hesap sistemimizde bulunamadı"
-        {%- endif -%}
-
-{% if parsleyPassword -%}
-          data-parsley-minlength="8"
-          data-parsley-uppercase="1"
-          data-parsley-lowercase="1"
-          data-parsley-number="1"
-          data-parsley-special="1"
-          data-parsley-required-message="Lütfen şifrenizi giriniz."
-          data-parsley-special-message="Şifreniz en az 1 özel karakter içermeli."
-          data-parsley-number-message="Şifreniz en az 1 rakam içermeli."
-          data-parsley-uppercase-message="Şifreniz en az 1 büyük harf içermeli."
-          data-parsley-lowercase-message="Şifreniz en az 1 küçük harf içermeli."
-          data-parsley-minlength-message="Şifreniz en az 8 haneli olmalı."
-        {%- endif -%}
-
-{% if parsleyCaptcha -%}
-          data-parsley-minlength="6"
-          data-parsley-minlength-message="En az 6 haneli olmalı"
-          data-parsley-required-message="Kodu doğru girdiğinizden emin olun."
-        {% endif %} #}

@@ -20,7 +20,8 @@
             labelFor='login__email',
             label='Eposta Adresi',
             inputAlert=true,
-            icon='/assets/images/input-alert.png'
+            icon='/assets/images/input-alert.png',
+            attr='data-parsley-errors-container=#input-errors data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı'
           )}}
         </div>
 
@@ -29,8 +30,8 @@
         <div class="form__action">
           {{Button.item(
             text='Devam Et',
-            buttonDisabled=true,
-            disabled=true
+            disabled=true,
+            type='submit'
           )}}
         </div>
       </form>

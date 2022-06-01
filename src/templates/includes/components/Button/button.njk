@@ -1,4 +1,4 @@
-{% macro item(text, class, href, buttonDisabled, disabled, buttonv2) %}
+{% macro item(text, type, class, href, disabled, buttonv2) %}
   {% if href %}
     <a href="{{ href }}" class="button
       {%- if class %} {{ class }} {%- endif -%}
@@ -7,9 +7,9 @@
   {% else %}
     <button class="button
       {%- if class %} {{ class }} {%- endif -%}
-      {%- if buttonDisabled %} button--disabled{%- endif -%}
       {%- if buttonv2 %} button--v2{%- endif -%}
     "
+    type="{%- if type -%} {{type}}{% else %}button{%- endif -%}"
     {%- if disabled -%} disabled {%- endif -%}
     >{{ text }}</button>
   {% endif %}

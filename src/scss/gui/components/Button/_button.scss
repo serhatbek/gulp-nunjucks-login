@@ -10,12 +10,12 @@
   text-align: center;
   cursor: pointer;
 
-  &--disabled {
+  &:disabled {
     color: $neutral300;
     background-color: $neutral100;
   }
 }
 
-.login-email .parsley-success ~ .form__action .button {
-  @extend .button--disabled;
-}
+// .login-email .parsley-success ~ .form__action .button {
+//   @extend .button, :disabled;
+// }
