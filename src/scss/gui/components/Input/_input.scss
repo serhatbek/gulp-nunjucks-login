@@ -68,6 +68,10 @@
     cursor: pointer;
   }
 
+  .input--alert {
+    pointer-events: none;
+  }
+
   > input[data-filled='true'] ~ .input-line {
     background-color: $neutral700;
     display: block;

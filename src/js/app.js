@@ -43,7 +43,6 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-console.log(inputs);
 
 if (inputs) {
   inputs.forEach((input) => {
@@ -61,6 +60,10 @@ function toggleDataFilled() {
       formSub.disabled = false;
     }
   });
+}
+
+if (formSub) {
+  formSub.addEventListener('submit', (e) => e.preventDefault);
 }
 
 // ***************************
@@ -85,9 +88,9 @@ function showHidePassword() {
 // **************************
 
 const captchaContainer = document.querySelector('.captcha'),
-  captchaRefreshBtn = captchaContainer.querySelector('#captcha__refresh'),
-  captchaListenBtn = captchaContainer.querySelector('#captcha__listen'),
-  captchaImage = captchaContainer.querySelector('.captcha__img figure img');
+  captchaRefreshBtn = document.querySelector('#captcha__refresh'),
+  captchaListenBtn = document.querySelector('#captcha__listen'),
+  captchaImage = document.querySelector('.captcha__img figure img');
 
 if (captchaContainer) {
   captchaRefreshBtn.addEventListener('click', () => {
