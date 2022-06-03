@@ -42,51 +42,29 @@
       color: $alert-light !important;
     }
 
-    // #input-errors {
-    //   .parsley-errors-list.filled {
-    //     .parsley-required,
-    //     .parsley-type,
-    //     .parsley-pattern,
-    //     .parsley-range,
-    //     .parsley-special,
-    //     .parsley-number,
-    //     .parsley-uppercase,
-    //     .parsley-minlength,
-    //     .parsley-lowercase {
-    //       color: $alert-light;
-    //       font-size: 10px;
-    //       line-height: 1.5;
-    //       font-weight: normal;
-    //       margin-top: 5px;
-    //     }
-    //   }
-    // }
+    .parsley-errors-list.filled {
+      .parsley-required,
+      .parsley-type,
+      .parsley-pattern,
+      .parsley-range,
+      .parsley-special,
+      .parsley-number,
+      .parsley-uppercase,
+      .parsley-minlength,
+      .parsley-lowercase {
+        color: $alert-light;
+        font-size: 10px;
+        line-height: 1.5;
+        font-weight: normal;
+        margin-top: 5px;
+      }
+    }
   }
 
   .form__action {
     text-align: right;
     a {
       margin-right: 90px;
-    }
-  }
-}
-
-#input-errors {
-  .parsley-errors-list.filled {
-    .parsley-required,
-    .parsley-type,
-    .parsley-pattern,
-    .parsley-range,
-    .parsley-special,
-    .parsley-number,
-    .parsley-uppercase,
-    .parsley-minlength,
-    .parsley-lowercase {
-      color: $alert-light;
-      font-size: 10px;
-      line-height: 1.5;
-      font-weight: normal;
-      margin-top: 5px;
     }
   }
 }

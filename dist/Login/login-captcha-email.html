@@ -18,7 +18,7 @@
       <figure>
         <img src="/assets/images/lifebox-logo.png" alt="Logo">
       </figure>
-      <form id="login-form" class="form">
+      <form id="login-form" class="form" data-parsley-trigger="keydown keyup">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
         <div class="form__row">
@@ -28,12 +28,10 @@
     <input type="email"
            id="login__email"required autocomplete="off"
           data-filled
-          data-parsley-errors-container=#input-errors data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı>
+          data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı>
     <label for="login__email">Eposta Adresi</label><button type="button" class="input__icon input--alert">
         <img src="/assets/images/input-alert.png">
-      </button><div class="input-line"></div>
-  </div>
-  <div id="input-errors"></div>
+      </button></div>
 
         </div>
 
@@ -61,10 +59,8 @@
     <input type="text"
            id="login__captcha"required autocomplete="off"
           data-filled
-          data-parsley-errors-container=#input-errors data-parsley-minlength=6 data-parsley-minlength-message=Enaz6haneliolmalı data-parsley-required-message=Kodudoğrugirdiğinizdeneminolun.>
-    <label for="login__captcha">Resimdeki kodu giriniz</label><div class="input-line"></div>
-  </div>
-  <div id="input-errors"></div>
+          data-parsley-minlength=6 data-parsley-minlength-message=Enaz6haneliolmalı data-parsley-required-message=Kodudoğrugirdiğinizdeneminolun.>
+    <label for="login__captcha">Resimdeki kodu giriniz</label></div>
 
   </div>
 </div>

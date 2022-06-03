@@ -9,7 +9,7 @@
       <figure>
         <img src="/assets/images/lifebox-logo.png" alt="Logo">
       </figure>
-      <form id="login-form" class="form">
+      <form id="login-form" class="form" data-parsley-trigger="keydown keyup">
         <h1>Giriş</h1>
         <p>DSS Suite hesabınızı kullanarak giriş yapın</p>
         <div class="form__row">
@@ -21,7 +21,7 @@
             label='Eposta Adresi',
             inputAlert=true,
             icon='/assets/images/input-alert.png',
-            attr='data-parsley-errors-container=#input-errors data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı'
+            attr='data-parsley-required-message=Lütfene-postaadresinizigiriniz. data-parsley-type-message=Girmişolduğunuze-postaadresiileilişkilibirhesapsistemimizdebulunamadı'
           )}}
         </div>
 

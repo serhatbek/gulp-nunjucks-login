@@ -10,6 +10,34 @@
     background-color: $neutral300;
     display: block;
     margin: 0 auto;
+    position: absolute;
+    top: 55px;
+    left: 14px;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 55px;
+    width: 40px;
+    height: 1px;
+    display: block;
+    background-color: var(--beforeColor, transparent);
+    z-index: 2;
+  }
+
+  &--line-focus::before {
+    background-color: $primary500;
+  }
+
+  &--line-error::before {
+    background-color: $alert-light;
+  }
+
+  &--line-filled::before {
+    background-color: $neutral700;
   }
 
   input {
@@ -72,25 +100,15 @@
     pointer-events: none;
   }
 
-  > input[data-filled='true'] ~ .input-line {
+  > input[data-filled='true'] &::before {
     background-color: $neutral700;
-    display: block;
   }
 
-  > input:focus ~ .input-line {
+  > input:focus &::before {
     background-color: $primary500;
   }
 
-  .input-line {
-    position: absolute;
-    left: 15px;
-    bottom: 0;
-    width: 40px;
-    height: 1px;
-    display: none;
-  }
-
-  > input.parsley-error ~ .input-line {
+  > input.parsley-error &::before {
     background-color: $alert-light;
   }
 }
