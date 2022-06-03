@@ -148,3 +148,40 @@ if (captchaContainer) {
     captchaImage.src = 'https://source.unsplash.com/random/150×72/';
   });
 }
+
+// *********************************
+const timer = document.querySelector('.timer');
+const getNewCode = document.querySelector('.otp a');
+const timerAfter = document.querySelector('.otp>div::after');
+
+let time = 90;
+
+if (getNewCode) {
+  getNewCode.addEventListener('click', startTimer);
+}
+
+function startTimer() {
+  getNewCode.style.display = 'none';
+  timer.style.color = '#696d80';
+  // timerAfter.style.display = 'none';
+  const countDown = setInterval(() => {
+    time--;
+    displayTime(time);
+
+    if (time <= 0) {
+      clearInterval(countDown);
+      timer.style.color = '#af2246';
+    }
+  }, 1000);
+}
+
+function displayTime(second) {
+  let min = Math.floor(second / 60);
+  let sec = Math.floor(second % 60);
+
+  min = min < 10 ? '0' + min : min;
+  sec = sec < 10 ? '0' + sec : sec;
+
+  timer.innerText = `${min}:${sec}`;
+  time--;
+}
