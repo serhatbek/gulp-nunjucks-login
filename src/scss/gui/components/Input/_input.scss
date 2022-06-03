@@ -111,4 +111,21 @@
   > input.parsley-error &::before {
     background-color: $alert-light;
   }
+
+  &.input-otp {
+    max-width: 45px;
+
+    &::before {
+      max-width: 15px;
+    }
+
+    &::after {
+      max-width: 15px;
+    }
+
+    input {
+      padding: 10px 15px;
+      text-align: center;
+    }
+  }
 }

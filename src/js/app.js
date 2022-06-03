@@ -43,8 +43,8 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-const input = document.querySelector('.input input');
-const inputParent = document.querySelector('.input');
+// const input = document.querySelector('.input input');
+// const inputParent = document.querySelector('.input');
 // const inputParentBefore = window.getComputedStyle(inputParent, '::before');
 
 if (formSub) {
@@ -83,14 +83,12 @@ inputs.forEach((input) => {
     if (target === document.activeElement && target.value === '') {
       target.parentNode.classList.add('input--line-focus');
     } else {
-      // target.parentNode.classList.remove('input--line-focus');
     }
 
     if (target.dataset.filled === 'true') {
       target.parentNode.classList.add('input--line-filled');
     } else {
       target.parentNode.classList.remove('input--line-filled');
-      // target.parentNode.classList.remove('input--line-focus');
     }
 
     if (target.classList.contains('parsley-error')) {

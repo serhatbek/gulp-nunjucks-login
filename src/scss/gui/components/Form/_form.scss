@@ -4,6 +4,65 @@
   padding: 45px 50px;
   border: 1px solid $neutral200;
 
+  &.form__otp {
+    p {
+      margin-bottom: 25px;
+    }
+    span {
+      display: inline;
+    }
+
+    .otp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+
+      > div {
+        width: 82px;
+        height: 30px;
+        padding: 9px;
+        border: 1px solid $neutral200;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        margin-right: 15px;
+
+        &::after {
+          content: '';
+          width: 64px;
+          height: 1px;
+          margin: 0 auto;
+          background-color: $alert-light;
+          position: absolute;
+          bottom: -1.5px;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        figure {
+          width: 12px;
+          height: 12px;
+
+          img {
+            display: block;
+          }
+        }
+
+        span {
+          margin-bottom: 0;
+          color: $alert-light;
+          font-size: 15px;
+        }
+      }
+
+      a {
+        color: $primary500;
+      }
+    }
+  }
+
   h1 {
     text-align: center;
     color: $neutral800;
@@ -20,7 +79,8 @@
   }
 
   .user-email {
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 15px;
     color: $neutral800;
     margin-bottom: 0;
   }
@@ -59,6 +119,12 @@
         margin-top: 5px;
       }
     }
+  }
+
+  .form__row--multiple {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .form__action {
