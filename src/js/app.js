@@ -151,9 +151,8 @@ if (captchaContainer) {
 
 // *********************************
 const timer = document.querySelector('.timer');
+const otpContainer = document.querySelector('.otp');
 const getNewCode = document.querySelector('.otp a');
-const timerAfter = document.querySelector('.otp>div::after');
-
 let time = 90;
 
 if (getNewCode) {
@@ -163,7 +162,8 @@ if (getNewCode) {
 function startTimer() {
   getNewCode.style.display = 'none';
   timer.style.color = '#696d80';
-  // timerAfter.style.display = 'none';
+  otpContainer.classList.add('active');
+
   const countDown = setInterval(() => {
     time--;
     displayTime(time);
@@ -171,6 +171,7 @@ function startTimer() {
     if (time <= 0) {
       clearInterval(countDown);
       timer.style.color = '#af2246';
+      otpContainer.classList.remove('active');
     }
   }, 1000);
 }
