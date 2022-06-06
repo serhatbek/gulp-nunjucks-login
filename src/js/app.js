@@ -43,9 +43,6 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-// const input = document.querySelector('.input input');
-// const inputParent = document.querySelector('.input');
-// const inputParentBefore = window.getComputedStyle(inputParent, '::before');
 
 if (formSub) {
   formSub.addEventListener('submit', (e) => e.preventDefault);
@@ -62,7 +59,6 @@ window.Parsley.on('field:success', function () {
 if (inputs) {
   inputs.forEach((input) => {
     input.addEventListener('input', toggleDataFilled);
-    // input.addEventListener('input', lineBefore);
   });
 }
 
@@ -80,10 +76,12 @@ inputs.forEach((input) => {
   input.addEventListener('input', (e) => {
     let target = e.currentTarget;
     console.log(target);
+    /*
     if (target === document.activeElement && target.value === '') {
       target.parentNode.classList.add('input--line-focus');
     } else {
     }
+    */
 
     if (target.dataset.filled === 'true') {
       target.parentNode.classList.add('input--line-filled');
@@ -99,23 +97,21 @@ inputs.forEach((input) => {
       target.parentNode.classList.remove('input--line-error');
     }
   });
+
+  input.addEventListener('focus', (e) => {
+    let target = e.currentTarget;
+    if (target.value === '') {
+      target.parentNode.classList.add('input--line-focus');
+    }
+  });
+
+  input.addEventListener('blur', (e) => {
+    let target = e.currentTarget;
+    if (target.parentNode.classList.contains('input--line-focus')) {
+      target.parentNode.classList.remove('input--line-focus');
+    }
+  });
 });
-
-// function lineBefore() {
-//   inputs.forEach((input) => {
-//     if (input === document.activeElement) {
-//       inputParent.style.setProperty('--beforeColor', '#2d56de');
-//     }
-
-//     if (input.dataset.filled === 'true') {
-//       inputParent.style.setProperty('--beforeColor', '#4c5061');
-//     }
-
-//     if (input.classList.contains('parsley-error')) {
-//       inputParent.style.setProperty('--beforeColor', '#af2246');
-//     }
-//   });
-// }
 
 // ***************************
 const togglePassword = document.querySelector('.input__icon');
@@ -184,5 +180,10 @@ function displayTime(second) {
   sec = sec < 10 ? '0' + sec : sec;
 
   timer.innerText = `${min}:${sec}`;
-  time--;
 }
+
+// *********************************
+
+const otpInputs = document.querySelectorAll('#otp-verify .input input');
+
+console.log(otpInputs);
