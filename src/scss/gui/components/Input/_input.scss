@@ -59,6 +59,21 @@
     line-height: 1.53;
   }
 
+  input[data-parsley-type='number'] {
+    font-size: 23px;
+    font-weight: 500;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
   label {
     position: absolute;
     left: 15px;
@@ -106,18 +121,6 @@
     pointer-events: none;
   }
 
-  // > input[data-filled='true'] &::before {
-  //   background-color: $neutral700;
-  // }
-
-  // > input:focus &::before {
-  //   background-color: $primary500;
-  // }
-
-  // > input.parsley-error &::before {
-  //   background-color: $alert-light;
-  // }
-
   &.input-otp {
     max-width: 45px;
 
@@ -130,7 +133,7 @@
     }
 
     input {
-      padding: 10px 15px;
+      padding: 10px 6px;
       text-align: center;
     }
   }

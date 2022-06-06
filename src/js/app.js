@@ -75,13 +75,6 @@ function toggleDataFilled() {
 inputs.forEach((input) => {
   input.addEventListener('input', (e) => {
     let target = e.currentTarget;
-    console.log(target);
-    /*
-    if (target === document.activeElement && target.value === '') {
-      target.parentNode.classList.add('input--line-focus');
-    } else {
-    }
-    */
 
     if (target.dataset.filled === 'true') {
       target.parentNode.classList.add('input--line-filled');
@@ -184,6 +177,38 @@ function displayTime(second) {
 
 // *********************************
 
+const otpForm = document.querySelector('.form__otp');
 const otpInputs = document.querySelectorAll('#otp-verify .input input');
 
-console.log(otpInputs);
+if (otpForm) {
+  otpForm.addEventListener('input', handleInputFocus);
+  otpInputs[0].addEventListener('paste', pasteCode);
+
+  otpInputs.forEach((input) =>
+    input.addEventListener('keydown', handleBackSpaceFocus)
+  );
+}
+
+function pasteCode(e) {
+  const paste = e.clipboardData.getData('text');
+  otpInputs.forEach((input, i) => (input.value = paste[i] || ''));
+}
+
+function handleInputFocus(e) {
+  e.preventDefault();
+  const otpInput = e.target;
+  if (otpInput.value) {
+    otpInput.parentNode.nextElementSibling.firstChild.nextSibling.focus();
+  }
+}
+
+function handleBackSpaceFocus(e) {
+  let otpInput = e.target;
+  const key = e.key;
+  if (key === 'Backspace') {
+    otpInput.value = '';
+    otpInput.innerText = '';
+    otpInput.parentNode.previousElementSibling.firstChild.nextSibling.focus();
+  }
+}
+// 345678

@@ -11,7 +11,7 @@
         <img src="/assets/images/logo.png" alt="Logo">
       </figure>
 
-      <form id="login-form" class="form form__otp" data-parsley-trigger="keydown keyup">
+      <form id="login-form" class="form form__otp" data-parsley-trigger="input">
         <h1>OTP Doğrula</h1>
         <p>Lütfen <span class="user-email">gokce.cetin@turkcell.com.tr</span> adresine gönderilen OTP kodunu giriniz</p>
 
@@ -30,32 +30,38 @@
           {{Input.item(
             class='input-otp',
             id='num1',
-            attr='maxlength=1'
+            labelFor='num1',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
+          )}}
+          {{Input.item(
+            class='input-otp',
+            id='num2',
+            labelFor='num2',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
+          )}}
+          {{Input.item(
+            class='input-otp',
+            id='num3',
+            labelFor='num3',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
+          )}}
+          {{Input.item(
+            class='input-otp',
+            id='num4',
+            labelFor='num4',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
           )}}
           {{Input.item(
             class='input-otp',
             id='num5',
-            attr='maxlength=1'
-          )}}
-          {{Input.item(
-            class='input-otp',
-            id='num5',
-            attr='maxlength=1'
-          )}}
-          {{Input.item(
-            class='input-otp',
-            id='num5',
-            attr='maxlength=1'
-          )}}
-          {{Input.item(
-            class='input-otp',
-            id='num5',
-            attr='maxlength=1'
+            labelFor='num5',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
           )}}
           {{Input.item(
             class='input-otp',
             id='num6',
-            attr='maxlength=1'
+            labelFor='num6',
+            attr='maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits'
           )}}
         </div>
 

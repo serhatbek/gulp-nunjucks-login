@@ -19,7 +19,7 @@
         <img src="/assets/images/logo.png" alt="Logo">
       </figure>
 
-      <form id="login-form" class="form form__otp" data-parsley-trigger="keydown keyup">
+      <form id="login-form" class="form form__otp" data-parsley-trigger="input">
         <h1>OTP Doğrula</h1>
         <p>Lütfen <span class="user-email">gokce.cetin@turkcell.com.tr</span> adresine gönderilen OTP kodunu giriniz</p>
 
@@ -42,8 +42,38 @@
     <input type="text"
            id="num1"autocomplete="off"
           data-filled
-          maxlength=1>
-    <label for=""></label></div>
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num1"></label></div>
+
+          
+
+  <div class="input
+          input-otp">
+    <input type="text"
+           id="num2"autocomplete="off"
+          data-filled
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num2"></label></div>
+
+          
+
+  <div class="input
+          input-otp">
+    <input type="text"
+           id="num3"autocomplete="off"
+          data-filled
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num3"></label></div>
+
+          
+
+  <div class="input
+          input-otp">
+    <input type="text"
+           id="num4"autocomplete="off"
+          data-filled
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num4"></label></div>
 
           
 
@@ -52,38 +82,8 @@
     <input type="text"
            id="num5"autocomplete="off"
           data-filled
-          maxlength=1>
-    <label for=""></label></div>
-
-          
-
-  <div class="input
-          input-otp">
-    <input type="text"
-           id="num5"autocomplete="off"
-          data-filled
-          maxlength=1>
-    <label for=""></label></div>
-
-          
-
-  <div class="input
-          input-otp">
-    <input type="text"
-           id="num5"autocomplete="off"
-          data-filled
-          maxlength=1>
-    <label for=""></label></div>
-
-          
-
-  <div class="input
-          input-otp">
-    <input type="text"
-           id="num5"autocomplete="off"
-          data-filled
-          maxlength=1>
-    <label for=""></label></div>
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num5"></label></div>
 
           
 
@@ -92,8 +92,8 @@
     <input type="text"
            id="num6"autocomplete="off"
           data-filled
-          maxlength=1>
-    <label for=""></label></div>
+          maxlength=1 data-parsley-maxlength=1 data-parsley-type=digits>
+    <label for="num6"></label></div>
 
         </div>
 
