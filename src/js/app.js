@@ -100,7 +100,10 @@ inputs.forEach((input) => {
 
   input.addEventListener('focus', (e) => {
     let target = e.currentTarget;
-    if (target.value === '') {
+    if (target.value === '' && target.id === 'login__password--new') {
+      target.parentNode.classList.remove('input--line-focus');
+      target.parentNode.classList.add('input--line-green');
+    } else {
       target.parentNode.classList.add('input--line-focus');
     }
   });
