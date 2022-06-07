@@ -118,12 +118,17 @@
       .parsley-number,
       .parsley-uppercase,
       .parsley-minlength,
-      .parsley-lowercase {
+      .parsley-lowercase,
+      .parsley-equalto {
         color: $alert-light;
         font-size: 10px;
         line-height: 1.5;
         font-weight: normal;
         margin-top: 5px;
+      }
+
+      .parsley-equalto {
+        color: $neutral600;
       }
     }
   }

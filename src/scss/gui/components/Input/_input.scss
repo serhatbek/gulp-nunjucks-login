@@ -101,6 +101,7 @@
 
   .input--alert {
     display: none;
+    pointer-events: none;
   }
 
   .input__icon,
@@ -121,10 +122,6 @@
 
   .input__icon {
     cursor: pointer;
-  }
-
-  .input--alert {
-    pointer-events: none;
   }
 
   &.input-otp {

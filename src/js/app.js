@@ -109,21 +109,27 @@ inputs.forEach((input) => {
 });
 
 // ***************************
-const togglePassword = document.querySelector('.input__icon');
-const passIcon = document.querySelector('.input__icon img');
-const password = document.querySelector('#login__password');
+const togglePasswordBtns = document.querySelectorAll('.input__icon');
+// const passIcon = document.querySelector('.input__icon img');
+// const password = document.querySelector('#login__password');
+// const passwordInputs = document.querySelectorAll('input[type="password"]');
 
-if (togglePassword) {
-  togglePassword.addEventListener('click', showHidePassword);
+if (togglePasswordBtns) {
+  togglePasswordBtns.forEach((togglePasswordBtn) => {
+    togglePasswordBtn.addEventListener('click', showHidePassword);
+  });
 }
 
-function showHidePassword() {
-  if (password.type === 'password') {
-    passIcon.src = '/assets/images/pass-hidden.png';
-    password.type = 'text';
+function showHidePassword(e) {
+  let targetInput = e.currentTarget.parentNode.firstChild.nextSibling;
+  let targetIcon = e.currentTarget.firstChild.nextSibling;
+  console.log(targetIcon.src);
+  if (targetInput.type === 'password') {
+    targetIcon.src = '/assets/images/pass-hidden.png';
+    targetInput.type = 'text';
   } else {
-    passIcon.src = '/assets/images/pass-visible.png';
-    password.type = 'password';
+    targetIcon.src = '/assets/images/pass-visible.png';
+    targetInput.type = 'password';
   }
 }
 
