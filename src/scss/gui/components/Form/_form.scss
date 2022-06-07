@@ -4,6 +4,10 @@
   padding: 45px 50px;
   border: 1px solid $neutral200;
 
+  @include phone {
+    padding: 45px 10px;
+  }
+
   &.form__otp {
     p {
       margin-bottom: 25px;

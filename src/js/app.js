@@ -43,25 +43,36 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
+const formLogin = document.querySelector('#login-form');
 
 if (formSub) {
   formSub.addEventListener('submit', (e) => e.preventDefault);
 }
 
-window.Parsley.on('field:error', function () {
-  formSub.disabled = true;
-});
+// window.Parsley.on('field:error', function () {
+//   formSub.disabled = true;
+//   formSub.setAttribute('disabled', true);
+// });
 
-window.Parsley.on('field:success', function () {
-  formSub.disabled = false;
-});
+// window.Parsley.on('field:success', function () {
+//   formSub.disabled = false;
+//   formSub.setAttribute('disabled', false);
+// });
 
 if (inputs) {
   inputs.forEach((input) => {
     input.addEventListener('input', toggleDataFilled);
+
+    input.addEventListener('keydown', () => {
+      if ($('#login-form').parsley().isValid()) {
+        formSub.disabled = false;
+      } else {
+        formSub.disabled = true;
+      }
+    });
   });
 }
-
+// **************************************
 function toggleDataFilled() {
   inputs.forEach((input) => {
     if (input.value === '') {
@@ -207,8 +218,10 @@ function handleBackSpaceFocus(e) {
   const key = e.key;
   if (key === 'Backspace') {
     otpInput.value = '';
-    otpInput.innerText = '';
     otpInput.parentNode.previousElementSibling.firstChild.nextSibling.focus();
   }
 }
-// 345678
+// 345678 657389 form__otp
+
+// const formOtp = document.querySelector('.form__otp').parsley();
+// console.log(formOtp.isValid());
