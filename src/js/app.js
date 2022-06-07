@@ -2,6 +2,8 @@
 // import parsley from '../../node_modules/parsley/dist/parsley';
 // *******************************
 $('#login-form').parsley();
+// const form = document.querySelector('#login-form');
+// form.Parsley();
 
 //has uppercase
 window.Parsley.addValidator('uppercase', {
@@ -43,27 +45,30 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-// const formLogin = document.querySelector('#login-form');
 
 if (formSub) {
   formSub.addEventListener('submit', (e) => e.preventDefault);
 }
 
+const form = document.querySelector('#login-form');
+
+form.addEventListener('keydown', () => {
+  setTimeout(() => {
+    if ($('#login-form').parsley().isValid()) {
+      formSub.disabled = false;
+    } else {
+      formSub.disabled = true;
+    }
+  }, 200);
+});
+
+// **************************************
+
 if (inputs) {
   inputs.forEach((input) => {
     input.addEventListener('input', toggleDataFilled);
-
-    input.addEventListener('keydown', () => {
-      if ($('#login-form').parsley().isValid()) {
-        formSub.disabled = false;
-      } else {
-        formSub.disabled = true;
-      }
-    });
   });
 }
-
-// **************************************
 function toggleDataFilled() {
   inputs.forEach((input) => {
     if (input.value === '') {
@@ -110,9 +115,6 @@ inputs.forEach((input) => {
 
 // ***************************
 const togglePasswordBtns = document.querySelectorAll('.input__icon');
-// const passIcon = document.querySelector('.input__icon img');
-// const password = document.querySelector('#login__password');
-// const passwordInputs = document.querySelectorAll('input[type="password"]');
 
 if (togglePasswordBtns) {
   togglePasswordBtns.forEach((togglePasswordBtn) => {
@@ -123,7 +125,7 @@ if (togglePasswordBtns) {
 function showHidePassword(e) {
   let targetInput = e.currentTarget.parentNode.firstChild.nextSibling;
   let targetIcon = e.currentTarget.firstChild.nextSibling;
-  console.log(targetIcon.src);
+
   if (targetInput.type === 'password') {
     targetIcon.src = '/assets/images/pass-hidden.png';
     targetInput.type = 'text';

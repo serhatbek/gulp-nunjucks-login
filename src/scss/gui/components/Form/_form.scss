@@ -9,10 +9,10 @@
   }
 
   &.form__otp {
-    p {
+    > p {
       margin-bottom: 25px;
     }
-    span {
+    > span {
       display: inline;
     }
 
@@ -79,7 +79,7 @@
     font-weight: normal;
   }
 
-  p {
+  > p {
     color: $neutral600;
     text-align: center;
     margin-bottom: 40px;
@@ -104,6 +104,15 @@
 
   .form__row {
     margin-bottom: 45px;
+
+    > p {
+      font-size: 10px;
+      line-height: 1.5;
+      font-weight: normal;
+      margin-top: 5px;
+      text-align: left;
+      color: $neutral600;
+    }
 
     .parsley-error {
       color: $alert-light !important;
@@ -130,6 +139,12 @@
       .parsley-equalto {
         color: $neutral600;
       }
+    }
+  }
+
+  .form__row:first-of-type {
+    > p {
+      color: $success-light !important;
     }
   }
 
