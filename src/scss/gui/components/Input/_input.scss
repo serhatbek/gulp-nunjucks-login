@@ -59,6 +59,12 @@
     line-height: 1.53;
   }
 
+  input[type='password'] {
+    font-family: 'Jost', sans-serif;
+    letter-spacing: 3px;
+    font-size: 34px;
+  }
+
   input[data-parsley-type='number'] {
     font-size: 23px;
     font-weight: 500;

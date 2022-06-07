@@ -43,21 +43,11 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-const formLogin = document.querySelector('#login-form');
+// const formLogin = document.querySelector('#login-form');
 
 if (formSub) {
   formSub.addEventListener('submit', (e) => e.preventDefault);
 }
-
-// window.Parsley.on('field:error', function () {
-//   formSub.disabled = true;
-//   formSub.setAttribute('disabled', true);
-// });
-
-// window.Parsley.on('field:success', function () {
-//   formSub.disabled = false;
-//   formSub.setAttribute('disabled', false);
-// });
 
 if (inputs) {
   inputs.forEach((input) => {
@@ -72,6 +62,7 @@ if (inputs) {
     });
   });
 }
+
 // **************************************
 function toggleDataFilled() {
   inputs.forEach((input) => {
