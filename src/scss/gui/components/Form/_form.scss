@@ -165,6 +165,31 @@
     }
   }
 
+  &.form__generic-page {
+    text-align: center;
+    figure {
+      width: 90px;
+      margin: 0 auto;
+    }
+
+    > p:first-of-type {
+      color: $neutral900;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.53;
+      margin-bottom: 15px;
+    }
+
+    > p:nth-of-type(2) {
+      margin-bottom: 45px;
+    }
+
+    .form__action {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
   .form__row--multiple {
     display: flex;
     justify-content: space-between;

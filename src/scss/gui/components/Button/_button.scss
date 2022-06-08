@@ -12,6 +12,10 @@
   text-align: center;
   cursor: pointer;
 
+  &--large {
+    min-width: 180px;
+  }
+
   &:disabled {
     color: $neutral300;
     background-color: $neutral100;

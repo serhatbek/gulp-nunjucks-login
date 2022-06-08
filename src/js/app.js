@@ -3,7 +3,7 @@
 // *******************************
 $('#login-form').parsley();
 // const form = document.querySelector('#login-form');
-// form.Parsley();
+// form.parsley().isValid();
 
 //has uppercase
 window.Parsley.addValidator('uppercase', {
@@ -52,7 +52,7 @@ if (form.length > 0) {
 
   form.addEventListener('keydown', () => {
     setTimeout(() => {
-      if ($('#login-form').parsley().isValid()) {
+      if (form.parsley().isValid()) {
         formSub.disabled = false;
       } else {
         formSub.disabled = true;

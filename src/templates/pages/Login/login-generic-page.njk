@@ -1,0 +1,30 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+
+{% set title = 'Login Generic Page' %}
+
+{% block content %}
+  <section class="section-login">
+    <div class="container">
+      <figure>
+        <img src="/assets/images/logo.png" alt="Logo">
+      </figure>
+
+      <form id="login-form" class="form form__generic-page" data-parsley-trigger="keydown keyup">
+        <figure>
+          <img src="/assets/images/login-success.png">
+        </figure>
+        <p>Bilgileriniz başarıyla güncellendi</p>
+        <p>Yeni bilgilerinizi kullanarak giriş yapabilirsiniz.</p>
+
+        <div class="form__action">
+          {{Button.item(
+            type='submit',
+            text='Giriş Yap',
+            class='button--large'
+          )}}
+        </div>
+      </form>
+    </div>
+  </section>
+{% endblock %}
