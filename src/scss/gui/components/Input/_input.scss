@@ -12,7 +12,8 @@
     margin: 0 auto;
     position: absolute;
     top: 55px;
-    left: 14px;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1;
   }
 
@@ -88,7 +89,7 @@
     position: absolute;
     left: 15px;
     top: 15px;
-    color: $neutral400;
+    color: $neutral600;
     pointer-events: none;
     transition: all 0.3s ease-in-out;
   }

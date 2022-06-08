@@ -45,22 +45,21 @@ window.Parsley.addValidator('special', {
 
 const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
-
-if (formSub) {
-  formSub.addEventListener('submit', (e) => e.preventDefault);
-}
-
 const form = document.querySelector('#login-form');
 
-form.addEventListener('keydown', () => {
-  setTimeout(() => {
-    if ($('#login-form').parsley().isValid()) {
-      formSub.disabled = false;
-    } else {
-      formSub.disabled = true;
-    }
-  }, 200);
-});
+if (form.length > 0) {
+  formSub.addEventListener('submit', (e) => e.preventDefault);
+
+  form.addEventListener('keydown', () => {
+    setTimeout(() => {
+      if ($('#login-form').parsley().isValid()) {
+        formSub.disabled = false;
+      } else {
+        formSub.disabled = true;
+      }
+    }, 200);
+  });
+}
 
 // **************************************
 
@@ -87,6 +86,13 @@ inputs.forEach((input) => {
       target.parentNode.classList.add('input--line-filled');
     } else {
       target.parentNode.classList.remove('input--line-filled');
+    }
+
+    if (target.id === 'login__password--new') {
+      target.parentNode.classList.remove('input--line-focus');
+      target.parentNode.classList.remove('input--line-filled');
+      target.parentNode.classList.remove('input--line-error');
+      target.parentNode.classList.add('input--line-green');
     }
 
     if (target.classList.contains('parsley-error')) {
