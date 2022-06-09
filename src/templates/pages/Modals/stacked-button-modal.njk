@@ -1,0 +1,39 @@
+{% extends 'includes/layout/layout.njk' %}
+{% import 'includes/components/Button/button.njk' as Button %}
+{% import 'includes/components/Input/input.njk' as Input %}
+
+{% set title = 'Modal' %}
+
+{% block content %}
+  {{Button.item(
+    text='Open Modal',
+    class='button--wide open-modal'
+  )}}
+
+  <div class="modal">
+    <div class="modal__body">
+      <button class="close-modal"><img src="/assets/images/close.png"></button>
+
+      <figure>
+        <img src="/assets/images/passwordnotspecified.png">
+      </figure>
+
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>Lütfen telefon numaranıza gönderilen OTP kodunu giriniz</p>
+
+      <div class="flex flex-column gap-20 align-center">
+        {{Button.item(
+        class='button--x-large',
+        text='Button 2'
+      )}}
+
+        {{Button.item(
+        href=true,
+        text='Button 1',
+        class='button--x-large',
+        buttonv3=true
+      )}}
+      </div>
+    </div>
+  </div>
+{% endblock %}

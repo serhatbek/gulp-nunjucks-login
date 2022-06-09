@@ -18,6 +18,11 @@
     border: 1px solid $primary500;
   }
 
+  &--v3 {
+    color: $primary500;
+    background-color: transparent;
+  }
+
   &--small {
     min-width: 147px;
   }
@@ -28,6 +33,14 @@
 
   &--large {
     min-width: 200px;
+  }
+
+  &--x-large {
+    min-width: 220px;
+  }
+
+  &--full {
+    width: 100%;
   }
 
   &:disabled {
