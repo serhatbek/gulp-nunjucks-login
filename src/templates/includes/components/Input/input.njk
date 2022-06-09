@@ -1,7 +1,7 @@
 {% macro item(class, required, label, type, icon, id, attr, inputAlert, labelFor) %}
 
   <div class="input
-          {% if class -%} {{ class }} {%- endif -%}
+          {%- if class %} {{ class }} {%- endif -%}
           {%- if icon %} input--icon {%- endif -%}">
     <input type="{%- if type -%} {{ type }}{% else %}text{%- endif -%}"
           {% if id %} id="{{ id }}" {%- endif -%}

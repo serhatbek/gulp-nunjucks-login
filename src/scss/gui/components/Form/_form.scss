@@ -116,13 +116,28 @@
       margin-top: 5px;
       text-align: left;
       color: $neutral600;
+      padding-left: 15px;
     }
 
-    .parsley-error {
-      color: $alert-light !important;
+    &.new-pass {
+      .parsley-errors-list.filled {
+        position: absolute;
+        margin-top: 31px;
+      }
+    }
+
+    &.new-pass-verify {
+      .parsley-errors-list.filled {
+        position: absolute;
+        margin-top: 16px;
+      }
     }
 
     .parsley-errors-list.filled {
+      position: absolute;
+      margin-top: 5px;
+      width: 100%;
+
       .parsley-required,
       .parsley-type,
       .parsley-pattern,
@@ -138,12 +153,9 @@
         line-height: 1.5;
         font-weight: normal;
         margin-left: 15px;
-        margin-top: 8px;
+        word-wrap: break-word;
+        margin-top: 2px;
       }
-
-      // .parsley-equalto {
-      //   color: $neutral600;
-      // }
     }
   }
 

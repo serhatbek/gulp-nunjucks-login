@@ -4,8 +4,7 @@
 
   &::after {
     content: '';
-    max-width: 290px;
-    width: 100%;
+    width: 90%;
     height: 1px;
     background-color: $neutral300;
     display: block;
@@ -88,7 +87,7 @@
   label {
     position: absolute;
     left: 15px;
-    top: 15px;
+    top: 20px;
     color: $neutral600;
     pointer-events: none;
     transition: all 0.3s ease-in-out;

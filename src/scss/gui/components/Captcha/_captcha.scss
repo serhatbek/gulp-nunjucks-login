@@ -42,5 +42,11 @@
       max-width: 250px;
       height: 0.5px;
     }
+
+    .input {
+      .parsley-errors-list.filled {
+        margin-top: 0;
+      }
+    }
   }
 }

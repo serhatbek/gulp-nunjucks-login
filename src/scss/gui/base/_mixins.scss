@@ -23,3 +23,10 @@ $tablet-max-vertical: 1366px;
     @content;
   }
 }
+// *********
+
+@mixin margin-b($size, $zero: false) {
+  @if $zero {
+    margin-bottom: $size;
+  }
+}
