@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        Login Generic Page
+        Modal
       </title>
     <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="../assets/css/styles.css">
@@ -13,30 +13,32 @@
   <body>
 
     
-  <section class="section-login">
-    <div class="container">
-      <figure>
-        <img src="/assets/images/logo.png" alt="Logo">
-      </figure>
-
-      <form id="login-form" class="form form__generic-page" data-parsley-trigger="keydown keyup">
-        <figure>
-          <img src="/assets/images/login-success.png">
-        </figure>
-        <p>Bilgileriniz başarıyla güncellendi</p>
-        <p>Yeni bilgilerinizi kullanarak giriş yapabilirsiniz.</p>
-
-        <div class="form__action">
-          
+  
   
     <button class="button button--wide"
-    type="submit">Giriş Yap</button>
+    type="button">Open Modal</button>
   
 
-        </div>
-      </form>
+
+  <div class="modal">
+    <div class="modal__body">
+      <button class="close-modal"><img src="/assets/images/close.png"></button>
+
+      <figure>
+        <img src="/assets/images/login-success.png">
+      </figure>
+
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>Lütfen telefon numaranıza gönderilen OTP kodunu giriniz</p>
+
+      
+  
+    <button class="button button--large"
+    type="button">Button 1</button>
+  
+
     </div>
-  </section>
+  </div>
 
 
     <script src="../assets/js/jquery-3.6.0.min.js"></script>

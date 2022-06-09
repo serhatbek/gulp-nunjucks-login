@@ -52,7 +52,7 @@ if (form.length > 0) {
 
   form.addEventListener('keydown', () => {
     setTimeout(() => {
-      if (form.parsley().isValid()) {
+      if ($('#login-form').parsley().isValid()) {
         formSub.disabled = false;
       } else {
         formSub.disabled = true;

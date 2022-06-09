@@ -1,0 +1,59 @@
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($neutral800, 0.75);
+
+  &__body {
+    max-width: 420px;
+    padding: 63px 60px 45px 60px;
+    background-color: $neutral000;
+    position: relative;
+
+    .close-modal {
+      width: 24px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    > figure {
+      width: 90px;
+      margin: 0 auto;
+      margin-bottom: 30px;
+
+      img {
+        display: block;
+      }
+    }
+
+    > h2 {
+      font-size: 23px;
+      line-height: 1.52;
+      font-weight: 500;
+      color: $neutral900;
+      margin-bottom: 15px;
+    }
+
+    > p {
+      font-weight: 500;
+      line-height: 1.53;
+      color: $neutral600;
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    > button {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}

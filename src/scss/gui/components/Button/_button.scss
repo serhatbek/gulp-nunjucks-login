@@ -12,8 +12,18 @@
   text-align: center;
   cursor: pointer;
 
-  &--large {
+  &--v2 {
+    color: $primary500;
+    background-color: transparent;
+    border: 1px solid $primary500;
+  }
+
+  &--wide {
     min-width: 180px;
+  }
+
+  &--large {
+    min-width: 200px;
   }
 
   &:disabled {
