@@ -19,7 +19,7 @@
 
   &__body {
     max-width: 420px;
-    padding: 63px 60px 45px 60px;
+    padding: 63px 50px 45px 50px;
     background-color: $neutral000;
     position: relative;
 
@@ -69,6 +69,12 @@
     > button {
       display: block;
       margin: 0 auto;
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 }

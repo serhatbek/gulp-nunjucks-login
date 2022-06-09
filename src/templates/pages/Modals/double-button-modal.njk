@@ -15,16 +15,24 @@
       <button class="close-modal"><img src="/assets/images/close.png"></button>
 
       <figure>
-        <img src="/assets/images/login-success.png">
+        <img src="/assets/images/reset.png">
       </figure>
 
       <h2>Lorem ipsum dolor sit amet</h2>
       <p>Lütfen telefon numaranıza gönderilen OTP kodunu giriniz</p>
 
-      {{Button.item(
-        class='button--large',
-        text='Button 1'
+      <div>
+        {{Button.item(
+        class='button--small',
+        text='Button 1',
+        buttonv2=true
       )}}
+
+        {{Button.item(
+        class='button--small',
+        text='Button 2'
+      )}}
+      </div>
     </div>
   </div>
 {% endblock %}

@@ -18,6 +18,10 @@
     border: 1px solid $primary500;
   }
 
+  &--small {
+    min-width: 147px;
+  }
+
   &--wide {
     min-width: 180px;
   }
