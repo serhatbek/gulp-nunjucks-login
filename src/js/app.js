@@ -47,7 +47,7 @@ const formSub = document.querySelector('.form__action .button');
 const inputs = Array.from(document.querySelectorAll('.input input'));
 const form = document.querySelector('#login-form');
 
-if (form.length > 0) {
+if (form) {
   formSub.addEventListener('submit', (e) => e.preventDefault);
 
   form.addEventListener('keydown', () => {
@@ -229,7 +229,30 @@ function handleBackSpaceFocus(e) {
     otpInput.parentNode.previousElementSibling.firstChild.nextSibling.focus();
   }
 }
-// 345678 657389 form__otp
 
-// const formOtp = document.querySelector('.form__otp').parsley();
-// console.log(formOtp.isValid());
+// ************************
+
+const openModalBtn = document.querySelector('.js-open-modal');
+const closeModalBtn = document.querySelector('.js-close-modal');
+const modal = document.querySelector('.modal');
+const modalBody = document.querySelector('.modal__body');
+
+if (openModalBtn && closeModalBtn) {
+  openModalBtn.addEventListener('click', openModal);
+  closeModalBtn.addEventListener('click', closeModal);
+}
+
+function openModal() {
+  modal.classList.add('active');
+}
+
+function closeModal() {
+  modal.classList.remove('active');
+}
+
+modal.addEventListener('click', (e) => {
+  let target = e.target.closest('.modal__body');
+  if (!target) {
+    closeModal();
+  }
+});
