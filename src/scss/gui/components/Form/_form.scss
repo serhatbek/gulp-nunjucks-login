@@ -119,20 +119,6 @@
       padding-left: 15px;
     }
 
-    &.new-pass {
-      .parsley-errors-list.filled {
-        position: absolute;
-        margin-top: 31px;
-      }
-    }
-
-    &.new-pass-verify {
-      .parsley-errors-list.filled {
-        position: absolute;
-        margin-top: 16px;
-      }
-    }
-
     .parsley-errors-list.filled {
       position: absolute;
       margin-top: 5px;
@@ -166,13 +152,16 @@
   }
 
   &.form__new-pass {
-    .form__row:first-of-type {
-      > p {
-        color: $success-light !important;
+    .form__row {
+      .parsley-errors-list.filled {
+        position: static;
       }
     }
+    .form__row.new-pass {
+      margin-bottom: 15px;
+    }
 
-    .form__row:nth-of-type(2) {
+    .form__row.new-pass-verify {
       margin-bottom: 25px;
     }
   }

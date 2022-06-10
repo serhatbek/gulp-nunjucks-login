@@ -56,7 +56,7 @@
     border: none;
     background-image: linear-gradient(to bottom, $neutral000, $neutral100);
     padding-left: 15px;
-    padding-top: 15px;
+    padding-top: 18px;
     font-size: 15px;
     color: $neutral800;
     font-weight: 600;
@@ -97,6 +97,7 @@
   > input[data-filled='true'] ~ label {
     font-size: 10px;
     top: 6px;
+    color: $neutral400;
   }
 
   input.parsley-error ~ .input--alert {

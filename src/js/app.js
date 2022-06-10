@@ -2,8 +2,6 @@
 // import parsley from '../../node_modules/parsley/dist/parsley';
 // *******************************
 $('#login-form').parsley();
-// const form = document.querySelector('#login-form');
-// form.parsley().isValid();
 
 //has uppercase
 window.Parsley.addValidator('uppercase', {
@@ -40,6 +38,18 @@ window.Parsley.addValidator('special', {
     return specials.length >= requirement;
   },
 });
+
+// **********************
+let newPass = document.querySelector('#login__password--new');
+let newPassInfo = document.querySelector('.new-pass p');
+
+if (newPass) {
+  $('#login__password--new')
+    .parsley()
+    .on('field:success', function () {
+      newPassInfo.style.color = '#2d8636';
+    });
+}
 
 // **********************
 
@@ -136,10 +146,10 @@ function showHidePassword(e) {
   let targetIcon = e.currentTarget.firstChild.nextSibling;
 
   if (targetInput.type === 'password') {
-    targetIcon.src = '/assets/images/pass-hidden.png';
+    targetIcon.src = '/assets/images/pass-visible.png';
     targetInput.type = 'text';
   } else {
-    targetIcon.src = '/assets/images/pass-visible.png';
+    targetIcon.src = '/assets/images/pass-hidden.png';
     targetInput.type = 'password';
   }
 }
@@ -148,12 +158,15 @@ function showHidePassword(e) {
 
 const captchaContainer = document.querySelector('.captcha'),
   captchaRefreshBtn = document.querySelector('#captcha__refresh'),
-  captchaListenBtn = document.querySelector('#captcha__listen'),
   captchaImage = document.querySelector('.captcha__img figure img');
+
+const currentTime = new Date().getTime();
 
 if (captchaContainer) {
   captchaRefreshBtn.addEventListener('click', () => {
-    captchaImage.src = 'https://source.unsplash.com/random/150×72/';
+    captchaImage.src = `/assets/images/captcha${currentTime}.png`;
+    console.log(currentTime);
+    console.log(captchaImage.src);
   });
 }
 
@@ -250,9 +263,11 @@ function closeModal() {
   modal.classList.remove('active');
 }
 
-modal.addEventListener('click', (e) => {
-  let target = e.target.closest('.modal__body');
-  if (!target) {
-    closeModal();
-  }
-});
+if (modal) {
+  modal.addEventListener('click', (e) => {
+    let target = e.target.closest('.modal__body');
+    if (!target) {
+      closeModal();
+    }
+  });
+}
