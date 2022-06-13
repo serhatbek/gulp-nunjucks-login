@@ -271,3 +271,10 @@ if (modal) {
     }
   });
 }
+
+function myFunction(a, n) {
+  return a[n];
+}
+
+console.log(myFunction('Moewsalot', 4));
+console.log('ghfgh');
